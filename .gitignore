@@ -1,6 +1,6 @@
 bcrypter
 
-vendor/
+dist/
 
 # Binaries for programs and plugins
 *.exe
