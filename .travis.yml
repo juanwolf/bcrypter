@@ -1,15 +1,13 @@
-# .travis.yml
 language: go
-
-# needed for the docker pipe
 services:
 - docker
-
-# calls goreleaser
 deploy:
 - provider: script
   skip_cleanup: true
   script: curl -sL https://git.io/goreleaser | bash
   on:
     tags: true
-    condition: $TRAVIS_OS_NAME = linux
+    condition: "$TRAVIS_OS_NAME = linux"
+env:
+  global:
+    secure: Ef6H5HwpoS7wjZUImacBnjGoxHzie3BiQraiFl4hCXt4X59ZxuUd+PDwwKNR2MkCcRovAy+bCtA3HVnGlMjkbtJYroPzy+6cwnD6iPhkLIWk3T1OVCzOqpB8V+LenOfLxiPkLlix0hjW2EcgzGxWzf/xqBPU4Z8WwnCbs2aoG7zV6bEHIba4suFONy+bJ9Z9VloiiMH0xTfEzJcrr0MBAlar/00SGhH84SCczRzEqB/QM4B7EX1nqrK8nEa8+6Sa6hkm5tb+SUlbfaVLBs7xFAEfAt07kf+pqzTNQjSqNlrq+l/ej9d9ZazqQuKMZvrbl7oKzN9Cj0FGK3b/q/PFUzyCk+6F/M9EeD2s8XDgAU1gzBGhUDkK75+319jfkJLAB6zzUTEZDQMi2itQ9ugHhyb6pjpAZD4YyJtLY5q4/ZYmDCbTsQp891ONeyZDgNdmt9rUyr3GyRBVNogxUD2p4FrisM5TLYXGcuIHhrxxAiY0oF2U+ykeGQW/16ISMrcN0cqziCbMkdE12e9SKoxMyOhvS3pqPCPqPxOpJXAwNegWlVTspOLlCgpACCcsZuOPy+TSf/d9idfQSIVUwdgzsOyEsA/YauNA2cHtAWAthd4A/HArrnqV4CpHRcnDoySJP+rF0bRB6NvGkuZNPoO9X1tkgB8GqbGkrVX/zTgAHuc=
